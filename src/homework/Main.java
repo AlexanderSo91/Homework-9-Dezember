@@ -16,16 +16,20 @@ public class Main {
 
         System.out.println("\nЗадача_1");
 
+        int save = 2459000;
         int salary = 15000;
         int total = 0;
-        while (total < 2_459_000) {
-            total = total + total/100;
-            total = total + salary;
-            System.out.println("Месяц" +1 + " сумма накоплений равна " + total + " рублей");
+        int month = 1;
+        double procentMonthly = 0.01;
+
+        while (total <= save) {
+            total += salary + total * procentMonthly;
+            System.out.printf("Месяц %d сумма накоплений равна  %d рублей%n", month, total);
+            month++;
         }
-
-
     }
+
+
 
     public static void task2() {
 
@@ -44,16 +48,20 @@ public class Main {
         }
     }
 
-
     public static void task3() {
 
         System.out.println("\nЗадача_3");
 
-        int Y=12000000;
-        int birth=17/1000;
-        int dead=8;
+        int population = 12_000_000;
+        int birth = 17;
+        int death = 8;
+        int difference = birth - death;
+        for (int i = 1; i <= 10; i++) {
+            population += population * difference / 1000;
+            System.out.println("Год " + i + " численность населения составляет " + population + " человек");
 
         }
+    }
 
 
     public static void task4() {
@@ -61,16 +69,17 @@ public class Main {
         System.out.println("\nЗадача_4");
 
         int salary = 15000;
-        int total = 0;
-        int i = 1;
-        for (; total < 12_000_000; i++) {
-            total = total + total/84;
-            total = total + salary;
-            if (i % 1 == 0) {
-                System.out.println("Месяц " + i + " Итого " + total);
-            }
+        double monthPrecent = 0.07;
+        int totalMoney = 12_000_000;
+        int month = 1;
+
+        while (salary <= totalMoney) {
+            salary += salary * monthPrecent;
+            System.out.println("Месяц " + month + " Итого " + salary);
+            month++;
+
         }
-        System.out.println(i + " Месяцев");
+
     }
 
     public static void task5() {
@@ -78,16 +87,20 @@ public class Main {
         System.out.println("\nЗадача_5");
 
         int salary = 15000;
-        int total = 0;
-        int i = 0;
-        for (; total < 12_000_000; i++) {
-            total = total + total/84;
-            total = total + salary;
-            if (i % 1 == 0) {
-                System.out.println("Месяц " + i + " Итого " + total);
+        double monthPrecent = 0.07;
+        int totalMoney = 12_000_000;
+        int month = 1;
+
+        while (salary <= totalMoney) {
+            salary += salary * monthPrecent;
+
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " Итого " + salary);
             }
+
+            month++;
+
         }
-        System.out.println(i + " Месяцев");
     }
 
     public static void task6() {
@@ -95,26 +108,50 @@ public class Main {
         System.out.println("\nЗадача_6");
 
         int salary = 15000;
-        int total = 0;
-        int i = 0;
-        for (; total < 12_000_000; i++) {
-            total = total + total/84;
-            total = total + salary;
-            if (i % 1 == 0) {
-                System.out.println("Месяц " + i + " Итого " + total);
+        double monthPrecent = 0.07;
+        int totalMoney = 12_000_000;
+        int monthInYear = 9 * 12;
+        int month = 1;
+
+        while (month <= monthInYear) {
+            salary += salary * monthPrecent;
+
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " Итого " + salary);
             }
+
+            month++;
         }
-        System.out.println(i + " Месяцев");
     }
 
     public static void task7() {
 
         System.out.println("\nЗадача_7");
+
+        int friday = 2;
+        int inMonth = 31;
+
+        while (friday <= inMonth)  {
+            System.out.println("Сегодня пятница " + friday + "-e число. Необходимо подготовить отчет.");
+            friday +=7;
+
+        }
     }
 
     private static void task8() {
 
         System.out.println("\nЗадача_8");
+
+        int currentYear = 2022;
+        int startYear = currentYear - 200;
+        int endYear = currentYear + 100;
+        int yearComet = 79;
+
+        for (int year = startYear; year <= endYear; year++) {
+            if (year % 79 == 0)  {
+                System.out.println(year);
+            }
+        }
 
     }
 }
