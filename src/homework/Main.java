@@ -35,7 +35,7 @@ public class Main {
 
         System.out.println("\nЗадача_2");
 
-        int i = 0;
+        int i;
         int total = 0;
         while (total < 10) {
             total = total +1;
@@ -56,9 +56,9 @@ public class Main {
         int birth = 17;
         int death = 8;
         int difference = birth - death;
-        for (int i = 1; i <= 10; i++) {
+        for (int year = 1; year <= 10; year++) {
             population += population * difference / 1000;
-            System.out.println("Год " + i + " численность населения составляет " + population + " человек");
+            System.out.println("Год " + year + " численность населения составляет " + population + " человек");
 
         }
     }
@@ -109,7 +109,6 @@ public class Main {
 
         int salary = 15000;
         double monthPrecent = 0.07;
-        int totalMoney = 12_000_000;
         int monthInYear = 9 * 12;
         int month = 1;
 
@@ -145,7 +144,6 @@ public class Main {
         int currentYear = 2022;
         int startYear = currentYear - 200;
         int endYear = currentYear + 100;
-        int yearComet = 79;
 
         for (int year = startYear; year <= endYear; year++) {
             if (year % 79 == 0)  {
